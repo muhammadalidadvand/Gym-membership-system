@@ -1,32 +1,42 @@
 members_list = []
 
-name = input()
-age = int(input())
-fee = 500000
 positive_answer = "yes"
+continue_program = "yes"
 
+while continue_program == "yes":
 
-if age >= 18 :
+    name = input("Name: ")
+    age = int(input("Age: "))
+    fee = 500000
 
-    is_student = input("is he/she a student? (yes/no) ") == positive_answer
-    is_oldmember = input("is he/she an oldmember? (yes/no) ") == positive_answer
-    
-    if is_student and is_oldmember :
-        takhfif_both = fee * 0.3
-        fee = fee - takhfif_both 
+    if age >= 18:
 
-    elif is_student :
-        takhfif_d = fee * 0.2
-        fee = fee - takhfif_d
+        is_student = input("Is student? (yes/no) ") == positive_answer
+        is_oldmember = input("Is oldmember? (yes/no) ") == positive_answer
 
-    elif is_oldmember :
-        takhfif_o = fee * 0.1
-        fee = fee - takhfif_o
+        if is_student and is_oldmember:
+            takhfif_both = fee * 0.3
+            fee = fee - takhfif_both
 
-    member = {'name':name, 'age': age ,'price' : fee }
+        elif is_student:
+            takhfif_d = fee * 0.2
+            fee = fee - takhfif_d
 
-    members_list.append(member)
-    print (members_list)
+        elif is_oldmember:
+            takhfif_o = fee * 0.1
+            fee = fee - takhfif_o
 
-else: 
-        print("not old enogh")
+        member = {'name': name, 'age': age, 'price': fee}
+
+        members_list.append(member)
+
+        print("Member registered successfully!")
+        print(member)
+
+    else:
+        print("Not old enough!")
+
+    continue_program = input("Add another member? (yes/no) ")
+
+print("\nAll registered members:")
+print(members_list)
