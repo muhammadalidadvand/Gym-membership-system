@@ -1,4 +1,4 @@
-Gym Membership System
+#Gym Membership System
 
 A beginner-level Python project for registering gym members and calculating membership fees based on eligibility and discount conditions.
 
